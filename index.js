@@ -10,7 +10,7 @@ require("dotenv").config();
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:"*"}));
 app.use("/users", UserRouter);
 app.use(Auth);
 app.use("/notes", NoteRouter);
