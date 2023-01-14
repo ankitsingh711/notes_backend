@@ -4,13 +4,13 @@ const { connection } = require("./config/db");
 const { UserRouter } = require("./router/user.router");
 const { NoteRouter } = require("./router/notes.router");
 const { Auth } = require("./middleware/auth.middleware");
-// const cors = require("cors");
+const cors = require("cors");
 require("dotenv").config();
 
 
 
 app.use(express.json());
-// app.use(cors())
+app.use(cors());
 app.use("/users", UserRouter);
 app.use(Auth);
 app.use("/notes", NoteRouter);
